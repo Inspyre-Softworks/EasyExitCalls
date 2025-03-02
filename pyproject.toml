@@ -1,6 +1,6 @@
 [project]
 name = "easy-exit-calls"
-version = "1.0.0-dev.1"
+version = "1.0.0-dev.2"
 description = "A Python library for managing exit handlers with enhanced features like decorators, UUID tracking, and LIFO execution."
 authors = [
     {name = "Taylor B.",email = "tayjaybabee@gmail.com"}
