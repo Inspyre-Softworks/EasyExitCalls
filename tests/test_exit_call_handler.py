@@ -1,6 +1,31 @@
 from easy_exit_calls import ExitCallHandler
 
 
+def test_unregister_all_with_name_non_matching():
+    def handler_one():
+        pass
+
+    def handler_two():
+        pass
+
+    ech = ExitCallHandler()
+    ech.register_handler(handler_one)
+    ech.register_handler(handler_two)
+
+    # Attempt to unregister handlers with a non-matching name
+    ech.unregister_all_with_name("non_existent_handler")
+
+    # Both handlers should still be present
+    names = [h["handler_info"]["name"] for h in ech.handlers]
+    assert set(names) == {"handler_one", "handler_two"}
+
+
+def test_unregister_all_with_name_empty_list():
+    ech = ExitCallHandler()
+    # Should not raise or fail
+    ech.unregister_all_with_name("any_name")
+    assert ech.handlers == []
+
 def setup_function(_):
     """Clear handlers before each test."""
     ExitCallHandler().clear_handlers()
