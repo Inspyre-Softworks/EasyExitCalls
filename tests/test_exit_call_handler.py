@@ -36,9 +36,18 @@ def test_unregister_by_uuid():
     ech = ExitCallHandler()
     uid = ech.register_handler(handler)
 
+    # Unregistering a valid UUID should succeed
     assert ech.find_handler_by_uuid(uid) is not None
     assert ech.unregister_by_uuid(uid) is True
     assert ech.find_handler_by_uuid(uid) is None
+
+    # Unregistering the same UUID again should return False
+    assert ech.unregister_by_uuid(uid) is False
+
+    # Unregistering a random/non-existent UUID should return False
+    import uuid
+    random_uid = uuid.uuid4()
+    assert ech.unregister_by_uuid(random_uid) is False
 
 
 def test_unregister_all_with_name():
