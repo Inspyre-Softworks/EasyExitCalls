@@ -30,3 +30,17 @@ pip install easy-exit-calls
     ```bash
     poetry install
     ```
+
+### Running the Examples
+
+After installation, run an example script from the project root:
+
+```bash
+python examples/manual_registration.py
+```
+
+You can also enable logging output:
+
+```bash
+python examples/manual_registration_with_logging.py --log-level DEBUG
+```

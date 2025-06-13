@@ -413,12 +413,17 @@ class ExitCallHandler(Loggable):
 
         log.debug(f"Unregistering all exit handlers with name {name}")
 
-        for entry in self._handlers:
-            if 'handler_info' in entry:
-                info = entry['handler_info']
-                if info.get('name') == name:
-                    log.debug(f"Removing handler {info.get('module', '')}.{info.get('name')}")
-                    self._handlers.remove(entry)
+        to_remove = []
+        for entry in list(self._handlers):
+            info = entry.get('handler_info', {})
+            if info.get('name') == name:
+                log.debug(
+                    f"Removing handler {info.get('module', '')}.{info.get('name')}"
+                )
+                to_remove.append(entry)
+
+        for entry in to_remove:
+            self._handlers.remove(entry)
 
         log.debug(f"All handlers with name {name} unregistered successfully")
 
