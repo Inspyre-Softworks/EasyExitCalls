@@ -99,9 +99,6 @@ class ExitCallHandler(Loggable):
             cls._instance._lifo = True
             cls._instance._lock = threading.Lock()
 
-            # Register cleanup method to run on exit
-            atexit.register(cls._instance._cleanup)
-
         return cls._instance
 
     def __init__(self, fifo=False):
