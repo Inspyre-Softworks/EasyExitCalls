@@ -13,6 +13,8 @@ A Python library for managing exit handlers with enhanced features like decorato
 
 ## Installation
 
+This project requires **Python 3.12** or later.
+
 ```bash
 pip install easy-exit-calls
 ```
@@ -117,6 +119,14 @@ Decorator for registering a function as an exit handler.
 - `**handler_kwargs`:
     Optional keyword arguments to pass to the handler function.<br><br>
 
+
+## Running Tests
+
+Run the test suite with `pytest` from the project root:
+
+```bash
+pytest
+```
 
 ## Contributing
 
