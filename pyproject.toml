@@ -1,6 +1,6 @@
 [project]
 name = "easy-exit-calls"
-version = "1.0.0-dev.2"
+version = "1.0.0"
 description = "A Python library for managing exit handlers with enhanced features like decorators, UUID tracking, and LIFO execution."
 authors = [
     {name = "Taylor B.",email = "tayjaybabee@gmail.com"}
@@ -8,12 +8,12 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
-    "inspyre-toolbox (>=1.6.0-dev22)",
+    "inspyre-toolbox (>=1.5.3,<2.0.0)",
     "inspy-logger (==3.2.3)",
     "pytz (>=2025.1,<2026.0)"
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
